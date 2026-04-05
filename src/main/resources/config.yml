@@ -1,0 +1,169 @@
+# ============================================================
+# EggHunt v2
+# ============================================================
+# Do not edit this value -- used for automatic config migration.
+config-version: 3
+
+event-active: true
+
+# --- Eggs ---
+eggs:
+  common:
+    nexo-ids:
+      - "orange_easter_egg"
+      - "pink_easter_egg"
+      - "blue_and_pink_easter_egg"
+      - "blue_easter_egg"
+    weight: 55
+    name: "&aEaster Egg"
+
+  uncommon:
+    nexo-ids:
+      - "daisy_easter_egg"
+    weight: 25
+    name: "&eSpecial Egg"
+
+  rare:
+    nexo-ids:
+      - "gold_easter_egg"
+      - "purple_and_green_easter_egg"
+    weight: 15
+    name: "&dSparkling Egg"
+
+  legendary:
+    nexo-ids:
+      - "rainbow_easter_egg"
+    weight: 5
+    name: "&6Legendary Egg"
+
+# --- Claimed Egg ---
+claimed-egg-id: "claimed_easter_egg"
+
+# --- Rewards ---
+rewards:
+  common:
+    - "cookie 16"
+    - "golden_apple 1"
+    - "experience_bottle 8"
+    - "cmd: money give {player} 100"
+    - "pumpkin_pie 8"
+    - "bread 16"
+    - "iron_ingot 6"
+    - "egg 16"
+    - "cmd: money give {player} 50"
+    - "experience_bottle 4"
+    - "cooked_beef 12"
+    - "lapis_lazuli 12"
+
+  uncommon:
+    - "golden_apple 3"
+    - "diamond 2"
+    - "cmd: money give {player} 500"
+    - "cmd: nexo give easter_egg_hunt_straw_basket 1 {player}"
+    - "cmd: nexo give easter_egg_hunt_straw_hat 1 {player}"
+    - "cmd: money give {player} 300"
+    - "emerald 8"
+    - "golden_carrot 16"
+    - "experience_bottle 16"
+    - "iron_ingot 16"
+    - "name_tag 2"
+    - "diamond 1"
+
+  rare:
+    - "diamond 5"
+    - "enchanted_golden_apple 1"
+    - "cmd: money give {player} 2000"
+    - "cmd: nexo give easter_bunny_beanie 1 {player}"
+    - "cmd: money give {player} 1500"
+    - "diamond 8"
+    - "emerald 16"
+    - "golden_apple 6"
+    - "experience_bottle 32"
+    - "totem_of_undying 1"
+
+  legendary:
+    - "cmd: nexo give easter_bunny_wand 1 {player}"
+    - "cmd: money give {player} 10000"
+    - "cmd: money give {player} 5000"
+    - "netherite_ingot 2"
+    - "enchanted_golden_apple 4"
+    - "diamond 16"
+    - "totem_of_undying 1"
+    - "elytra 1"
+    - "netherite_upgrade_smithing_template 1"
+    - "cmd: money give {player} 7500"
+
+# --- Admin Hidden Mode ---
+admin-hidden:
+  enabled: true
+
+# --- Player Spawning Mode ---
+player-spawning:
+  enabled: true
+  interval-seconds: 300
+  chance-per-player: 0.35
+  min-distance: 8
+  max-distance: 30
+  despawn-seconds: 180
+  max-active-eggs: 50
+  notify-player: true
+  particle: "COMPOSTER"
+  particle-interval-ticks: 30
+  ambient-sound: "entity.player.levelup"
+  sound-volume: 0.3
+  sound-pitch: 1.5
+  sound-interval-ticks: 100
+
+# --- Action Bar ---
+# Persistent action bar shown to players in the event world.
+# {count} = player's event eggs collected, {total} = total admin eggs placed.
+action-bar:
+  event-world: "event"
+  event-format: "&a&lEggs Found: &f{count} &7/ &f{total}"
+  random-format: "&a&lYou've found &f{count} &a&leggs!"
+
+# --- Break Effects ---
+break-effect:
+  sound: "entity.player.levelup"
+  particle: "TOTEM_OF_UNDYING"
+  particle-count: 25
+
+# --- Player Limits ---
+limits:
+  max-per-player: -1
+  cooldown-seconds: 3
+
+# --- Leaderboard ---
+leaderboard:
+  enabled: true
+  announce-top: 5
+
+# --- Messages ---
+messages:
+  prefix: "&8[&a&lEggHunt&8] "
+  player-prefix: ""
+  event-started: "&aThe Easter Egg Hunt has begun! Keep your eyes open..."
+  event-stopped: "&cThe Easter Egg Hunt has ended! Thanks for playing!"
+  egg-collected: "&aYou found a {egg_name}&a!"
+  prize-received: "&eYou received: &f{prize}"
+  already-claimed: "&7You've already collected this egg."
+  on-cooldown: "&cSlow down! Wait a moment."
+  limit-reached: "&cYou've hit the max eggs for this event!"
+  spawned-near: "&7&oYou sense something hidden nearby..."
+  egg-despawned: "&7&oNevermind... it seems to have disappeared."
+  not-active: "&cThe egg hunt is not currently active."
+  already-active: "&cThe egg hunt is already running!"
+  no-permission: "&cNo permission."
+  reload: "&aConfig reloaded."
+  wand-given: "&aEgg wand given! Right-click: place. Left-click: cycle tier. Sneak+right: remove."
+  wand-tier: "&eSelected: {tier}"
+  placed-admin-egg: "&aPlaced {tier} &aegg."
+  removed-admin-egg: "&cRemoved admin egg."
+  status: "&aEvent: {active} &8| &aAdmin: &f{admin_count} &8| &aPlayer: &f{player_count} &8| &aCollected: &f{total_collected}"
+  stats-header: "&6&lYour Egg Hunt Stats:"
+  stats-event-eggs: "  &eEvent Eggs: &f{count}"
+  stats-random-eggs: "  &eRandom Eggs: &f{count}"
+  stats-total: "  &eTotal: &f{count}"
+  stats-rank: "  &eRank: &f#{rank} &7of {hunters} hunters"
+  stats-no-rank: "  &eRank: &7No eggs collected yet"
+  stats-event-status: "  &eEvent: {status}"

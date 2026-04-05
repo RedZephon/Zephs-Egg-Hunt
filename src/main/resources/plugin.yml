@@ -1,0 +1,30 @@
+name: EggHunt
+version: '${version}'
+main: com.m13.egghunt.EggHuntPlugin
+api-version: '1.21'
+depend:
+  - Nexo
+  - ProtocolLib
+softdepend:
+  - PlaceholderAPI
+description: Two-mode Easter Egg Hunt with per-player admin egg claiming and invisible player eggs.
+authors:
+  - RedZephon
+commands:
+  egghunt:
+    description: Manage the Easter Egg Hunt
+    usage: /egghunt <start|stop|wand|clear|reload|status|leaderboard|stats>
+    permission: egghunt.stats
+permissions:
+  egghunt.admin:
+    description: Full control of the egg hunt system (start, stop, wand, clear, reload, etc.)
+    default: op
+  egghunt.collect:
+    description: Allows collecting easter eggs
+    default: true
+  egghunt.stats:
+    description: View personal egg collection stats
+    default: true
+  egghunt.leaderboard:
+    description: View the egg hunt leaderboard
+    default: true
